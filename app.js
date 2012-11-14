@@ -147,10 +147,11 @@ http.createServer(app).listen(app.get('port'), function(request, response){
   // Herokuに置く場合、REDISTOGO_URLがSETされているので、その時は以下のようにする。
   if (process.env.REDISTOGO_URL) {
     var url = process.env.REDISTOGO_URL;    //err
+    console.log(url);
   }
-  var uri = url.parse(request.url);
+  //var uri = url.parse(request.url);
   //if (uri.pathname === "/doSearch") {
-    return doSearch(uri, response);
+    //return doSearch(uri, response);
   //} else {
     //return serveStatic(uri.pathname, response);
   //}
