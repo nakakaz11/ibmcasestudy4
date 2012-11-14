@@ -148,13 +148,13 @@ server = http.createServer( function(request, response) {
   var uri;
   //uri = url.parse(request.url);
 
-  console.log("testSW " + url );
+  /*console.log("testSW " + url );
 
   if (uri.pathname === "/doSearch") {
     return doSearch(uri, response);
   } else {
     return serveStatic(uri.pathname, response);
-  }
+  }*/
 });
 server.listen(app.get('port'), function(){
   console.log("SW port " + app.get('port'));
