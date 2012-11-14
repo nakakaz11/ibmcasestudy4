@@ -7,7 +7,6 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
-  //, url = require("url")
   , path = require('path');
 
 var app = express();
@@ -28,10 +27,12 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+
+app.get('/', routes.index);
+app.get('/', user.list);
+app.get('/users', user.list);
+
 // いまのところここだけJS
 http.createServer(app).listen(app.get('port'), function(){
   console.log("SW port " + app.get('port'));
 });
-
-app.get('/', routes.index);
-app.get('/users', user.list);
