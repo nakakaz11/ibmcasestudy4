@@ -142,20 +142,10 @@ doSearch = function(uri, response) {
 };
 
 // いまのところここだけJS
-//url = require("url");
-server = http.createServer(app,function(request, response) {
-  //var uri;
-  //uri = url.parse(request.url);
-
-  console.log("testSW " );
-  /*
-  if (uri.pathname === "/doSearch") {
-    return doSearch(uri, response);
-  } else {
-    return serveStatic(uri.pathname, response);
-  }*/
-});
-server.listen(app.get('port'), function(){
+url = require("url");
+server = http.createServer(app);
+server.listen(app.get('port'), function(request, response){
+  console.log("SW TEST " + app.get('http').pathname );
   console.log("SW port " + app.get('port'));
 });
 /*
