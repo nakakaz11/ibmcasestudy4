@@ -150,7 +150,9 @@ doSearch = function(uri, response) {
 // いまのところここだけJS
 function test(request, response){
   var uri;
-  uri = url.parse(request.url);
+  uri = url.parse(request.url, true);
+  //uri = path
+
 /*
   if (uri.pathname === "/doSearch") {
     return doSearch(uri, response);
@@ -158,7 +160,7 @@ function test(request, response){
     return serveStatic(uri.pathname, response);
   }
 */
-  console.log("SW TEST "+ uri );
+  console.log("SW TEST "+ uri['query']['q'] );
   console.log("SW port " + app.get('port'));
 }
 http.createServer(app).listen(app.get('port'), function(){
