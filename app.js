@@ -128,7 +128,7 @@ serveStatic = function(uri, response) {
 
 doSearch = function(uri, response) {
   var keyword, params, query;
-  query = path.split("&");
+  query = uri.query.split("&");
   params = {};
   query.forEach(function(nv) {
     var nvp;
@@ -147,11 +147,11 @@ doSearch = function(uri, response) {
 http.createServer(app).listen(app.get('port'), function(request, response){
 
   // Herokuに置く場合、REDISTOGO_URLがSETされているので、その時は以下のようにする。
-  if (process.env.REDISTOGO_URL) {
-    var url = require("url").parse(process.env.REDISTOGO_URL);
+  //if (process.env.REDISTOGO_URL) {
+  //var url = require("url").parse(process.env.REDISTOGO_URL);
     //var uri = url.parse(request.url);
-    console.log("sw-UR?"+ url );
-  }
+    console.log("sw-UR?"+ path );
+  //}
   console.log("Express server listening on port SW " + app.get('port'));
     //return doSearch(path, response);
 });
