@@ -3,7 +3,7 @@
  * GET users listing.
  */
 
-exports.user = function(request, response){
+exports.list = function(request, response){
 
   response.send('hello world');
 
