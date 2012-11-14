@@ -98,6 +98,7 @@ combinedSearch = function(keyword, callback) {
 
 fs = require("fs");
 
+/*
 serveStatic = function(uri, response) {
   var fileName;
   fileName = path.join(process.cwd(), uri);
@@ -123,10 +124,11 @@ serveStatic = function(uri, response) {
     });
   });
 };
+*/
 
 doSearch = function(uri, response) {
   var keyword, params, query;
-  query = uri.query.split("&");
+  query = path.split("&");
   params = {};
   query.forEach(function(nv) {
     var nvp;
@@ -149,13 +151,8 @@ http.createServer(app).listen(app.get('port'), function(request, response){
     var url = process.env.REDISTOGO_URL;
     console.log(url);
   //}
-  //var uri = url.parse(request.url);
-  //if (__dirname === "/doSearch") {
+    //var uri = url.parse(request.url);
     return doSearch(path, response);
-  //} // else {
-    //return serveStatic(uri.pathname, response);
-  //}
-
 });
 
 /*
