@@ -143,7 +143,7 @@ doSearch = function(uri, response) {
 
 // いまのところここだけJS
 url = require("url");
-server = app.createServer( function(request, response) {
+server = http.createServer( function(request, response) {
 
   var uri;
   //uri = url.parse(request.url);
