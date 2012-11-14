@@ -144,22 +144,21 @@ doSearch = function(uri, response) {
 // いまのところここだけJS
 var url
 url = require("url");
-server = http.createServer(app);
-server.listen(app.get('port'), function( request, response ){
-    var uri;
-    uri = url.pathname;
+server = app.createServer(function(request, response) {
+  var uri;
+  uri = url.parse(request.url);
 
-    console.log("sw:"+uri);
+  console.log("testSW " + uri );
 
-    if (uri === "/doSearch") {
-      return doSearch(uri, response);
-    } else {
-      //return serveStatic(uri, response);
-    }
-
-    console.log("Exp-server-listen-port SW: " + app.get('port'));
+  if (uri.pathname === "/doSearch") {
+    return doSearch(uri, response);
+  } else {
+    return serveStatic(uri.pathname, response);
+  }
 });
-
+server.listen(app.get('port'), function(){
+  console.log("SW port " + app.get('port'));
+});
 /*
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
