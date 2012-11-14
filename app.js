@@ -143,31 +143,19 @@ doSearch = function(uri, response) {
 };
 
 // いまのところここだけJS
-function test(request, response){
-  //var uri;
-  //uri = url.parse(process.env.REDISTOGO_URL);
-  //uri = path
-
-/*
-  if (uri.pathname === "/doSearch") {
-    return doSearch(uri, response);
-  } else {
-    return serveStatic(uri.pathname, response);
-  }
-*/
-}
 server = http.createServer(app);
 
-http.createServer(function(request, response){
-// momokuro追加
-if (process.env.REDISTOGO_URL) {
-  var url   = require("url").parse(process.env.REDISTOGO_URL);
-}
-
-  //console.log("SW TEST "+ request );     //['q']  .split("/")
+app.get('/', function(request, response){
+  //res.send('hello world');
+  // momokuro追加
+  if (process.env.REDISTOGO_URL) {
+    var url   = require("url").parse(process.env.REDISTOGO_URL);
+  }
+  console.log("SW TEST "+ request );     //['q']  .split("/")
   console.log("SW port " + app.get('port'));
-
 });
+
+
 
 server.listen(app.get('port'), function(){
 });
