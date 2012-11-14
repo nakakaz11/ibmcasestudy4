@@ -155,19 +155,19 @@ function test(request, response){
     return serveStatic(uri.pathname, response);
   }
 */
-  console.log("SW TEST "+ request.pathname );     //['q']  .split("/")
-  console.log("SW port " + app.get('port'));
 }
-http.createServer(app).listen(app.get('port'), function(){
-
+server = http.createServer(function(request, response){
 // momokuro追加
 if (process.env.REDISTOGO_URL) {
   var url   = require("url").parse(process.env.REDISTOGO_URL);
 }
-//
 
-  test(url);
+  console.log("SW TEST "+ request );     //['q']  .split("/")
+  console.log("SW port " + app.get('port'));
 
+});
+
+server.listen(app.get('port'), function(){
 });
 
 /*
