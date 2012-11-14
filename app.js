@@ -142,7 +142,7 @@ doSearch = function(uri, response) {
 };
 
 // いまのところここだけJS
-server = http.createServer( app, function( request, response ) {
+server = http.createServer( function( request, response ) {
   var uri;
   uri = url.parse(request.url);
   console.log("sw:"+uri.pathname);
