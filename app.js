@@ -155,10 +155,10 @@ function test(request, response){
     return serveStatic(uri.pathname, response);
   }
 */
-  console.log("SW TEST "+ app.get('path') );     //['q']  .split("/")
+  console.log("SW TEST "+ path );     //['q']  .split("/")
   console.log("SW port " + app.get('port'));
 }
-http.createServer(app).listen(app.get('port','path'), function(){
+http.createServer(app).listen(app.get('port'), function(){
 
 // momokuro追加
 if (process.env.REDISTOGO_URL) {
