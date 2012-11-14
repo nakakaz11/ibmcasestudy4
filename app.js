@@ -142,10 +142,12 @@ doSearch = function(uri, response) {
 };
 
 // いまのところここだけJS
-url = require("url");
+//url = require("url");
 server = http.createServer(app);
 server.listen(app.get('port'), function(request, response){
-  console.log("SW TEST " + path);
+  var uri;
+  uri = path.parse(request.url);
+  console.log("SW TEST " + uri.pathname);
   console.log("SW port " + app.get('port'));
 });
 /*
