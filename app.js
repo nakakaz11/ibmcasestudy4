@@ -9,7 +9,7 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 
-var app = express();
+var app = express.createServer();
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -143,7 +143,7 @@ doSearch = function(uri, response) {
 
 // いまのところここだけJS
 url = require("url");
-server = http.createServer(app,function(request, response) {
+server = app( function(request, response) {
 
   var uri;
   //uri = url.parse(request.url);
