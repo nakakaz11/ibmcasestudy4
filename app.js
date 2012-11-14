@@ -150,7 +150,7 @@ http.createServer(app).listen(app.get('port'), function(request, response){
   //if (process.env.REDISTOGO_URL) {
   //var url = require("url").parse(process.env.REDISTOGO_URL);
     //var uri = url.parse(request.url);
-    console.log("sw-UR?"+ path );
+    console.log("sw-UR?"+ path[0] );
   //}
   console.log("Express server listening on port SW " + app.get('port'));
     //return doSearch(path, response);
