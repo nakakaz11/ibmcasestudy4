@@ -10,12 +10,6 @@ var express = require('express')
   //, url = require("url")
   , path = require('path');
 
-// momokuro追加
-//if (process.env.REDISTOGO_URL) {
-  var url   = require("url").parse(process.env.REDISTOGO_URL);
-//}
-//
-
 var app = express();
 
 app.configure(function(){
@@ -161,10 +155,16 @@ function test(request, response){
     return serveStatic(uri.pathname, response);
   }
 */
-  console.log("SW TEST "+ url['q'] );     //['q']
+  console.log("SW TEST "+ path['q'] );     //['q']
   console.log("SW port " + app.get('port'));
 }
 http.createServer(app).listen(app.get('port'), function(){
+
+// momokuro追加
+if (process.env.REDISTOGO_URL) {
+  var url   = require("url").parse(process.env.REDISTOGO_URL);
+}
+//
 
   test();
 
