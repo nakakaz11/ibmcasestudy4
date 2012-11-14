@@ -3,9 +3,17 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/baseIBM/search.js"></script>
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+	<div>
+		<label for="searchQuery">Keyword:</label>
+		<input type="text" name="searchQuery" id="searchQuery"></input>
+		<input type="button" value="Search" onclick="doSearch()"/>
+	</div>
+	<div class="goog" id="gr"/>
+	<div class="twit" id="tr"/>
   </body>
 </html>
