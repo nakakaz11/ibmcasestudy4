@@ -94,11 +94,9 @@ combinedSearch = function(keyword, callback) {
   });
 };
 
-//path = require("path");
 
 fs = require("fs");
 
-/*
 serveStatic = function(uri, response) {
   var fileName;
   fileName = path.join(process.cwd(), uri);
@@ -124,7 +122,6 @@ serveStatic = function(uri, response) {
     });
   });
 };
-*/
 
 doSearch = function(uri, response) {
   var keyword, params, query;
@@ -144,16 +141,18 @@ doSearch = function(uri, response) {
   });
 };
 
-http.createServer(app).listen(app.get('port'), function(request, response){
+server = http.createServer( app, function(request, response) {
+  var uri;
+  uri = url.parse(request.url);
+  if (uri.pathname === "/doSearch") {
+    return doSearch(uri, response);
+  } else {
+    return serveStatic(uri.pathname, response);
+  }
+});
 
-  // Herokuに置く場合、REDISTOGO_URLがSETされているので、その時は以下のようにする。
-  //if (process.env.REDISTOGO_URL) {
-  //var url = require("url").parse(process.env.REDISTOGO_URL);
-    //var uri = url.parse(request.url);
-    console.log("sw-UR?"+ path[0] );
-  //}
-  console.log("Express server listening on port SW " + app.get('port'));
-    //return doSearch(path, response);
+server.listen(app.get('port'), function(){
+  console.log("Express server listening on port SW" + app.get('port'));
 });
 
 /*
