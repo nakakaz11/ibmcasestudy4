@@ -7,6 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
+  , url = require("url")
   , path = require('path');
 
 var app = express();
@@ -148,16 +149,16 @@ doSearch = function(uri, response) {
 
 // いまのところここだけJS
 function test(request, response){
-/*
   var uri;
   uri = url.parse(request.url);
+/*
   if (uri.pathname === "/doSearch") {
     return doSearch(uri, response);
   } else {
     return serveStatic(uri.pathname, response);
   }
 */
-  console.log("SW TEST ");
+  console.log("SW TEST "+ uri );
   console.log("SW port " + app.get('port'));
 }
 http.createServer(app).listen(app.get('port'), function(){
