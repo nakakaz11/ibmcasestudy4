@@ -151,8 +151,9 @@ http.createServer(app).listen(app.get('port'), function(request, response){
     var url = process.env.REDISTOGO_URL;
     console.log(url);
   //}
+    console.log("Express server listening on port SW " + app.get('port'));
     //var uri = url.parse(request.url);
-    return doSearch(path, response);
+    //return doSearch(path, response);
 });
 
 /*
