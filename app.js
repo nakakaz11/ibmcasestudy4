@@ -145,7 +145,7 @@ doSearch = function(uri, response) {
 url = require("url");
 server = http.createServer(app);
 server.listen(app.get('port'), function(request, response){
-  console.log("SW TEST " + app.get('http').pathname );
+  console.log("SW TEST " + app.get('http'));
   console.log("SW port " + app.get('port'));
 });
 /*
