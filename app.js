@@ -34,6 +34,8 @@ app.get('/users', user.list);
 // いまのところここだけJS
 http.createServer(app).listen(app.get('port'), function(){
   console.log("SW port " + app.get('port'));
+  var path = path;
+  console.log("SW TEST "+ path );
 });
 
 
@@ -151,9 +153,7 @@ app.get(/*'/',*/ function(request, response){
     });
   };
 
-  //res.send("respond with a resource");
   // momokuro追加
-  var path = path;
   //var uri = url.parse(process.env.REDISTOGO_URL);
   //var uri = url.parse(request.REDISTOGO_URL);
 /*
@@ -163,7 +163,5 @@ app.get(/*'/',*/ function(request, response){
     return serveStatic(uri.pathname, response);
   }
 */
-  console.log("SW TEST "+ path );
-  //['q']  .split("/")
 
 });
