@@ -158,7 +158,7 @@ function test(request, response){
   console.log("SW TEST "+ app.get('path') );     //['q']  .split("/")
   console.log("SW port " + app.get('port'));
 }
-http.createServer(app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port','path'), function(){
 
 // momokuro追加
 if (process.env.REDISTOGO_URL) {
