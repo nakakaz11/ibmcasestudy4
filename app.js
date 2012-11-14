@@ -141,9 +141,12 @@ doSearch = function(uri, response) {
   });
 };
 
-server = http.createServer( app, function(request, response) {
+// いまのところここだけJS
+server = http.createServer( app, function( request, response ) {
   var uri;
   uri = url.parse(request.url);
+  console.log("sw:"+uri.pathname);
+
   if (uri.pathname === "/doSearch") {
     return doSearch(uri, response);
   } else {
@@ -152,7 +155,7 @@ server = http.createServer( app, function(request, response) {
 });
 
 server.listen(app.get('port'), function(){
-  console.log("Express server listening on port SW" + app.get('port'));
+  console.log("Exp-server-listen-port SW: " + app.get('port'));
 });
 
 /*
