@@ -148,7 +148,7 @@ doSearch = function(uri, response) {
 //}
 http.createServer(app).listen(app.get('port'), function(request, response){
   var uri;
-  uri = url.parse(request.url);
+  //uri = url.parse(request.url);
   //if (uri.pathname === "/doSearch") {
     return doSearch(uri, response);
   //} else {
