@@ -151,8 +151,8 @@ app.use(function(request, response){
 
   url = require("url");
   // momokuro追加
-  //var uri = url.parse(process.env.REDISTOGO_URL);
-  var uri = url.parse(request.REDISTOGO_URL);
+  var uri = url.parse(process.env.REDISTOGO_URL);
+  //var uri = url.parse(request.REDISTOGO_URL);
   if (uri.pathname === "/doSearch") {
     return doSearch(uri, response);
   } else {
