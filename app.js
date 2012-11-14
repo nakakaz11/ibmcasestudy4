@@ -156,8 +156,9 @@ function test(request, response){
   }
 */
 }
-http.createServer(app);
-server = http.createServer(function(request, response){
+server = http.createServer(app);
+
+http.createServer(function(request, response){
 // momokuro追加
 if (process.env.REDISTOGO_URL) {
   var url   = require("url").parse(process.env.REDISTOGO_URL);
