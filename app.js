@@ -149,10 +149,10 @@ http.createServer(app).listen(app.get('port'), function(request, response){
   // Herokuに置く場合、REDISTOGO_URLがSETされているので、その時は以下のようにする。
   //if (process.env.REDISTOGO_URL) {
     var url = process.env.REDISTOGO_URL;
-    console.log(url);
+    var uri = url.parse(request.url);
+    console.log("sw-UR?"+ uri );
   //}
     console.log("Express server listening on port SW " + app.get('port'));
-    //var uri = url.parse(request.url);
     //return doSearch(path, response);
 });
 
