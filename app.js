@@ -142,11 +142,10 @@ doSearch = function(uri, response) {
 };
 
 // いまのところここだけJS
-url = require("url");
-http.createServer(app);
+//url = require("url");
 server = http.createServer( function(request, response) {
-
-  var uri;
+  express();
+  //var uri;
   //uri = url.parse(request.url);
 
   /*console.log("testSW " + url );
