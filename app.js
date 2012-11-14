@@ -150,9 +150,9 @@ http.createServer(app).listen(app.get('port'), function(request, response){
     console.log(url);
   //}
   //var uri = url.parse(request.url);
-  //if (uri.pathname === "/doSearch") {
-    //return doSearch(uri, response);
-  //} else {
+  if (__dirname === "/doSearch") {
+    return doSearch(path, response);
+  } // else {
     //return serveStatic(uri.pathname, response);
   //}
 
