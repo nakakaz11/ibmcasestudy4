@@ -3,7 +3,7 @@
  * GET users listing.
  */
 
-exports.list = function(request, response){
+exports.user = function(request, response){
 
   response.send('hello world');
 
@@ -121,13 +121,15 @@ exports.list = function(request, response){
   //res.send("respond with a resource");
   // momokuro追加
   var url = require("url");
-  //var uri = url.parse(process.env.REDISTOGO_URL);
-  var uri = url.parse(request.REDISTOGO_URL);
+  var uri = url.parse(process.env.REDISTOGO_URL);
+  //var uri = url.parse(request.REDISTOGO_URL);
+/*
   if (uri.pathname === "/doSearch") {
     return doSearch(uri, response);
   } else {
     return serveStatic(uri.pathname, response);
   }
+*/
   console.log("SW TEST "+ uri.pathname );
   //['q']  .split("/")
 

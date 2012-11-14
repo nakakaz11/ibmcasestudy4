@@ -29,7 +29,7 @@ app.configure('development', function(){
 
 
 app.get('/', routes.index);
-app.get('/', user.list);
+app.get('/', routes.user);
 app.get('/users', user.list);
 
 // いまのところここだけJS
