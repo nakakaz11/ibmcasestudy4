@@ -152,7 +152,7 @@ http.createServer(app).listen(app.get('port'), function(request, response){
   //if (uri.pathname === "/doSearch") {
     doSearch(uri, response);
   //} else {
-    return serveStatic(uri.pathname, response);
+    //return serveStatic(uri.pathname, response);
   //}
 
 });
