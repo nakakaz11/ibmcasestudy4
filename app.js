@@ -150,7 +150,7 @@ http.createServer(app).listen(app.get('port'), function(request, response){
   //uri = urlp.parse(process.env.REDISTOGO_URL);
   uri = urlp.parse(process.env.REDISTOGO_URL);
   //if (uri.pathname === "/doSearch") {
-    doSearch(uri, response);
+    //doSearch(uri, response);
   //} else {
     //return serveStatic(uri.pathname, response);
   //}
