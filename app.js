@@ -9,13 +9,12 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 
-//var app = express();
+var app = express();
 
 // momokuro追加
 if (process.env.REDISTOGO_URL) {
   var url   = require("url").parse(process.env.REDISTOGO_URL);
 }
-var app = module.exports = express.createServer();
 //
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -161,7 +160,11 @@ function test(request, response){
   console.log("SW TEST ");
   console.log("SW port " + app.get('port'));
 }
-test();
+http.createServer(app).listen(app.get('port'), function(){
+
+  test();
+
+});
 
 /*
 http.createServer(app).listen(app.get('port'), function(){
