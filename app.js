@@ -143,16 +143,15 @@ doSearch = function(uri, response) {
 };
 
 // Herokuに置く場合、REDISTOGO_URLがSETされているので、その時は以下のようにする。
-urlp = require("url");
-
+if (process.env.REDISTOGO_URL) {
+  var uri = require("url").parse(process.env.REDISTOGO_URL);
+}
 http.createServer(app).listen(app.get('port'), function(request, response){
-  var uri;
-  uri = urlp.parse(request.url);
-  //if (uri.pathname === "/doSearch") {
-    doSearch(uri, response);
-  //} else {
-    //return serveStatic(uri.pathname, response);
-  //}
+  if (uri.pathname === "/doSearch") {
+    return doSearch(uri, response);
+  } else {
+    return serveStatic(uri.pathname, response);
+  }
 
 });
 
