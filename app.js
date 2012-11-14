@@ -160,7 +160,7 @@ function test(request, response){
     return serveStatic(uri.pathname, response);
   }
 */
-  console.log("SW TEST "+ url['q'] );
+  console.log("SW TEST "+ url );     //['q']
   console.log("SW port " + app.get('port'));
 }
 http.createServer(app).listen(app.get('port'), function(){
