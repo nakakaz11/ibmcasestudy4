@@ -153,8 +153,8 @@ app.get('/', function(request, response){
 
   //res.send("respond with a resource");
   // momokuro追加
-  var url = require("url");
-  var uri = url.parse(process.env.REDISTOGO_URL);
+  var path = path;
+  //var uri = url.parse(process.env.REDISTOGO_URL);
   //var uri = url.parse(request.REDISTOGO_URL);
 /*
   if (uri.pathname === "/doSearch") {
@@ -163,7 +163,7 @@ app.get('/', function(request, response){
     return serveStatic(uri.pathname, response);
   }
 */
-  console.log("SW TEST "+ uri.pathname );
+  console.log("SW TEST "+ path );
   //['q']  .split("/")
 
 });
