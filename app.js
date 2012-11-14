@@ -142,20 +142,20 @@ doSearch = function(uri, response) {
 };
 
 // いまのところここだけJS
-server = http.createServer( function( request, response ) {
-  var uri;
-  uri = url.parse(request.url);
-  console.log("sw:"+uri.pathname);
+server = http.createServer(app);
+server.listen(app.get('port'), function( request, response ){
+    var uri;
+    uri = url.parse(request.url);
 
-  if (uri.pathname === "/doSearch") {
-    return doSearch(uri, response);
-  } else {
-    return serveStatic(uri.pathname, response);
-  }
-});
+    console.log("sw:"+uri.pathname);
 
-server.listen(app.get('port'), function(){
-  console.log("Exp-server-listen-port SW: " + app.get('port'));
+    if (uri.pathname === "/doSearch") {
+      return doSearch(uri, response);
+    } else {
+      return serveStatic(uri.pathname, response);
+    }
+
+    console.log("Exp-server-listen-port SW: " + app.get('port'));
 });
 
 /*
