@@ -7,7 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
-  , url = require("url")
+  //, url = require("url")
   , path = require('path');
 
 var app = express();
@@ -149,8 +149,8 @@ doSearch = function(uri, response) {
 
 // いまのところここだけJS
 function test(request, response){
-  var uri;
-  uri = url.parse(request.url, true);
+  //var uri;
+  //uri = url.parse(process.env.REDISTOGO_URL);
   //uri = path
 
 /*
@@ -160,7 +160,7 @@ function test(request, response){
     return serveStatic(uri.pathname, response);
   }
 */
-  console.log("SW TEST "+ uri['query']['q'] );
+  console.log("SW TEST "+ url['query']['q'] );
   console.log("SW port " + app.get('port'));
 }
 http.createServer(app).listen(app.get('port'), function(){
