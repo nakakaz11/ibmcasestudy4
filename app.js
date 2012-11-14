@@ -143,6 +143,7 @@ doSearch = function(uri, response) {
 };
 
 // Herokuに置く場合、REDISTOGO_URLがSETされているので、その時は以下のようにする。
+/*
 url = require("url").parse(process.env.REDISTOGO_URL);
 
 http.createServer(app).listen(app.get('port'), function(request, response){
@@ -155,9 +156,8 @@ http.createServer(app).listen(app.get('port'), function(request, response){
   }
 
 });
+*/
 
-/*
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
-*/
