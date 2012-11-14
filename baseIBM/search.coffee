@@ -26,12 +26,14 @@ class TwitterSearchResult extends SearchResult
   toHtml: ->   # オーバーライド super(toHtml)
     "<a href='http://twitter.com/#{@source}'>@#{@source}</a>: #{super}"
 
+###
 class MockSearch  # モック検索クラス
   search: (query, callback) ->
     results =
       google: (new GoogleSearchResult obj for obj in mockGoogleData)
       twitter: (new TwitterSearchResult obj for obj in mockTwitterData)
     callback results
+###
 
 class CombinedSearch  # モックではない検索クラス
   search: (keyword, callback) ->
@@ -62,7 +64,7 @@ class CombinedSearch  # モックではない検索クラス
     appender("tr", results.twitter)
 
 # mock data
-
+###
 mockGoogleData = [  # モック・データ JSON風
     GsearchResultClass:"GwebSearch",
     link:"http://jashkenas.github.com/coffee-script/",
@@ -110,3 +112,4 @@ mockTwitterData = [  # モック・データ JSON風
     to_user_id:null,
     to_user_id_str:null
 ]
+###

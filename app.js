@@ -142,15 +142,15 @@ doSearch = function(uri, response) {
   });
 };
 
-// Herokuに置く場合、REDISTOGO_URLがSETされているので、その時は以下のようにする。
-//if (process.env.REDISTOGO_URL) {
-  //var url = process.env.REDISTOGO_URL;    //err
-//}
 http.createServer(app).listen(app.get('port'), function(request, response){
-  var uri;
-  //uri = url.parse(request.url);
+
+  // Herokuに置く場合、REDISTOGO_URLがSETされているので、その時は以下のようにする。
+  if (process.env.REDISTOGO_URL) {
+    var url = process.env.REDISTOGO_URL;    //err
+  }
+  var uri = url.parse(request.url);
   //if (uri.pathname === "/doSearch") {
-    //return doSearch(uri, response);
+    return doSearch(uri, response);
   //} else {
     //return serveStatic(uri.pathname, response);
   //}

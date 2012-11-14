@@ -138,8 +138,8 @@ this.doSearch = function() {
       return $(id).innerHTML += "<p>" + (x.toHtml()) + "</p>";
     });
   };
-  //ms = new CombinedSearch;
-  ms = new MockSearch;
+  ms = new CombinedSearch;
+  //ms = new MockSearch;
   return ms.search(kw, function(results) {
     appender("gr", results.google);
     return appender("tr", results.twitter);
