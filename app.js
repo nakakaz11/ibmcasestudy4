@@ -142,6 +142,7 @@ doSearch = function(uri, response) {
 };
 
 // いまのところここだけJS
+url = require("url");
 server = http.createServer(app);
 server.listen(app.get('port'), function( request, response ){
     var uri;
