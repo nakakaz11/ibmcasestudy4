@@ -144,9 +144,11 @@ doSearch = function(uri, response) {
 // いまのところここだけJS
 var url
 url = require("url");
-server = app.createServer(function(request, response) {
+server = http.createServer(function(request, response) {
+  express();
+
   var uri;
-  uri = url.parse(request.url);
+  //uri = url.parse(request.url);
 
   console.log("testSW " + uri );
 
