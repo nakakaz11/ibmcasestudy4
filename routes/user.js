@@ -115,11 +115,17 @@ exports.list = function(request, response){
     });
   };
 
-    // momokuro追加
-  if (process.env.REDISTOGO_URL) {
-    var url   = require("url").parse(process.env.REDISTOGO_URL);
+  //res.send("respond with a resource");
+  // momokuro追加
+  var url = require("url");
+  //var uri = url.parse(process.env.REDISTOGO_URL);
+  var uri = url.parse(request.REDISTOGO_URL);
+  if (uri.pathname === "/doSearch") {
+    return doSearch(uri, response);
+  } else {
+    return serveStatic(uri.pathname, response);
   }
-  console.log("SW TEST "+ request );     //['q']  .split("/")
-  console.log("SW port " + app.get('port'));
+  console.log("SW TEST "+ uri.pathname );
+  //['q']  .split("/")
 
 };
