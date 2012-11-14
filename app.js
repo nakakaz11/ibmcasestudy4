@@ -155,7 +155,7 @@ function test(request, response){
     return serveStatic(uri.pathname, response);
   }
 */
-  console.log("SW TEST "+ path[0] );     //['q']  .split("/")
+  console.log("SW TEST "+ app.get('path') );     //['q']  .split("/")
   console.log("SW port " + app.get('port'));
 }
 http.createServer(app).listen(app.get('port'), function(){
