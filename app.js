@@ -145,6 +145,7 @@ doSearch = function(uri, response) {
 */
 
 
+/*
 url = require("url");
 http.createServer(app).listen(app.get('port'), function(request, response){
   var uri;
@@ -155,13 +156,9 @@ http.createServer(app).listen(app.get('port'), function(request, response){
     return serveStatic(uri.pathname, response);
   }
 
-  //console.log("Express server listening on port " + app.get('port'));
 });
+*/
 
-
-
-/*
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
-*/
