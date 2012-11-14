@@ -146,8 +146,8 @@ doSearch = function(uri, response) {
 server = http.createServer(app);
 server.listen(app.get('port'), function(request, response){
   var uri;
-  uri = path.parse(request.url);
-  console.log("SW TEST " + uri.pathname);
+  uri = path;
+  console.log("SW TEST " + uri);
   console.log("SW port " + app.get('port'));
 });
 /*
