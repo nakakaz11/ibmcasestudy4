@@ -10,7 +10,7 @@ var express = require('express')
   //, url = require("url")
   , path = require('path');
 
-var app = express();
+var app = require('express').createServer();
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -143,21 +143,18 @@ doSearch = function(uri, response) {
 };
 
 // いまのところここだけJS
-server = http.createServer(app);
 
 app.get('/', function(request, response){
   //res.send('hello world');
   // momokuro追加
-  if (process.env.REDISTOGO_URL) {
+  /*if (process.env.REDISTOGO_URL) {
     var url   = require("url").parse(process.env.REDISTOGO_URL);
-  }
+  }*/
   console.log("SW TEST "+ request );     //['q']  .split("/")
   console.log("SW port " + app.get('port'));
 });
 
-
-
-server.listen(app.get('port'), function(){
+app.listen(app.get('port'), function(){
 });
 
 /*
