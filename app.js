@@ -10,13 +10,14 @@ var express = require('express')
   //, url = require("url")
   , path = require('path');
 
+// momokuro追加
+//if (process.env.REDISTOGO_URL) {
+  var url   = require("url").parse(process.env.REDISTOGO_URL);
+//}
+//
+
 var app = express();
 
-// momokuro追加
-if (process.env.REDISTOGO_URL) {
-  var url   = require("url").parse(process.env.REDISTOGO_URL);
-}
-//
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
@@ -160,7 +161,7 @@ function test(request, response){
     return serveStatic(uri.pathname, response);
   }
 */
-  console.log("SW TEST "+ url );     //['q']
+  console.log("SW TEST "+ url['q'] );     //['q']
   console.log("SW port " + app.get('port'));
 }
 http.createServer(app).listen(app.get('port'), function(){
