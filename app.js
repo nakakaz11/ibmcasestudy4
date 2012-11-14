@@ -147,9 +147,9 @@ urlp = require("url");
 
 http.createServer(app).listen(app.get('port'), function(request, response){
   var uri;
-  //uri = urlp.parse(process.env.REDISTOGO_URL);
+  uri = urlp.parse(request.url);
   //if (uri.pathname === "/doSearch") {
-    //doSearch(uri, response);
+    doSearch(uri, response);
   //} else {
     //return serveStatic(uri.pathname, response);
   //}
