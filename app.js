@@ -164,7 +164,7 @@ if (process.env.REDISTOGO_URL) {
   var url   = require("url").parse(process.env.REDISTOGO_URL);
 }
 
-  console.log("SW TEST "+ request );     //['q']  .split("/")
+  //console.log("SW TEST "+ request );     //['q']  .split("/")
   console.log("SW port " + app.get('port'));
 
 });
