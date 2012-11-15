@@ -150,12 +150,11 @@ app.use(function(request, response){
     });
   };
 
-  //url = require("url");
+  url = require("url");
   // momokuro追加
   //var uri = url.parse(process.env.REDISTOGO_URL);
-  //var uri = url.parse(request.REDISTOGO_URL);
-  var uri = path;
-  console.log("SW TEST ");
+  var uri = url.parse(request.REDISTOGO_URL);
+  console.log("SW TEST "+uri);
 
   if (uri.pathname === "/doSearch") {
     return doSearch(uri, response);
