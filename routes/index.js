@@ -4,6 +4,7 @@
  */
 
 exports.index = function(request, response){
-  response.render('index', { title: 'Express' });
+  response.render('index', { title: 'SW (node.js+express IBM cs4)' });
+  response.render('index', { desc: 'Twitter&Facebook searchTest' });
 
 };
