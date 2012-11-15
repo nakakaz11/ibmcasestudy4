@@ -159,6 +159,6 @@ app.use(function(request, response){
   } else {
     return serveStatic(uri.pathname, response);
   }*/
-  console.log("SW TEST "+ request.REDISTOGO_URL );
+  console.log("SW TEST ");
 
 });
