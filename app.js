@@ -154,7 +154,7 @@ app.use(function(request, response){
   // momokuro追加
   //var uri = url.parse(process.env.REDISTOGO_URL);
   var uri = url.parse(request.url);
-  console.log("SW TEST "+uri);
+  //console.log("SW TEST "+uri);
 
   if (uri.pathname === "/doSearch") {
     return doSearch(uri, response);
