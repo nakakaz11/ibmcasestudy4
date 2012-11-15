@@ -154,11 +154,13 @@ app.use(function(request, response){
   // momokuro追加
   //var uri = url.parse(process.env.REDISTOGO_URL);
   //var uri = url.parse(request.REDISTOGO_URL);
-  /*if (uri.pathname === "/doSearch") {
+  var uri = path;
+  console.log("SW TEST ");
+
+  if (uri.pathname === "/doSearch") {
     return doSearch(uri, response);
   } else {
     return serveStatic(uri.pathname, response);
-  }*/
-  console.log("SW TEST ");
+  }
 
 });
