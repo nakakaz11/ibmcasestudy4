@@ -7,6 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
+  , url = require("url")
   , path = require('path');
 
 var app = express();
@@ -150,10 +151,9 @@ app.use(function(request, response){
     });
   };
 
-  url = require("url");
   // momokuro追加
   //var uri = url.parse(process.env.REDISTOGO_URL);
-  var uri = url.parse(request.REDISTOGO_URL);
+  var uri = url.parse(request.url);
   console.log("SW TEST "+uri);
 
   if (uri.pathname === "/doSearch") {
