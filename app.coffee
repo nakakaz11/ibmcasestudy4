@@ -7,6 +7,7 @@ user = require('./routes/user')
 http = require('http')
 url = require("url")
 path = require('path')
+fs = require "fs"
 
 app = express()
 
@@ -74,7 +75,6 @@ app.use (request, response) ->
       if data.google != ""    # 両方からのデータがあることを確認
         callback(data)
 
-  fs = require "fs"
   serveStatic = (uri, response) ->
     fileName = path.join process.cwd(), uri   # ファイルの相対パスを絶対パスに変換
     path.exists fileName, (exists) ->
