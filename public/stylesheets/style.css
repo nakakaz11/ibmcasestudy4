@@ -7,7 +7,7 @@ a {
   color: #00B7FF;
 }
 
-#form input#message {
+#form input#searchQuery {
 	border:1px solid #CCCCCC;
 	color:#666666;
 	font-size:1em;
