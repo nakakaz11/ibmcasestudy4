@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+#form input#message {
+	border:1px solid #CCCCCC;
+	color:#666666;
+	font-size:1em;
+	padding:3px 4px;
+	width:50%;
+}
